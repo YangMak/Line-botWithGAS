@@ -14,7 +14,8 @@ function doPost(e) {
         //console.log('pre - initReply');
     } else {
         // e => push Event
-        initPush(param);
+        var postMsg = param.msg;
+        initPush(postMsg);
         //console.log('pre - initPush');      
     }
     return ContentService.createTextOutput(JSON.stringify({ 'content': 'post ok' })).setMimeType(ContentService.MimeType.JSON);
