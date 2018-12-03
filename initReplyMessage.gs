@@ -4,14 +4,12 @@ function initReplyMessage(token, e) {
     var msg = e.message;
     var msgType = msg.type;
     var retMsg;
-
+    var regE = new RegExp('^[!！]{1}[a-zA-Z0-9_\\u4e00-\\u9fa5]+\\s[a-zA-Z0-9_\\u4e00-\\u9fa5\\s]+','g');
+    
     switch (msgType) {
         case 'text':
-            //console.log(msg.text.split(' ').length);
-            if (msg.text.indexOf('提醒') == 0 && msg.text.split(' ').length > 1) {
-                var note = msg.text.split(' ');
-                //console.log('pre - initReplyMessageKW');
-                retMsg = initReplyMessageKW(note);
+            if(msg.text.match(regE)){
+                retMsg = initReplyMessageKW(msg.text, retMsg);
             } else {
                 retMsg = [{
                     'type': msgType,
