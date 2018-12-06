@@ -3,7 +3,7 @@ function initReplyMessageKW(msgText, retMsg) {
   
   //Logger.log(kw);
   
-  var kwList = ['提醒', '翻譯', 'yt', '本周新片', '即將上映'];
+  var kwList = ['提醒', '翻譯', 'yt', '更新電影', '本周新片', '即將上映', '功能表'];
   
   switch(kw) {
     case '提醒':
@@ -17,7 +17,11 @@ function initReplyMessageKW(msgText, retMsg) {
     case 'yt':
       retMsg = initMessageKW_youtube(msgText);
       break;
-
+      
+    case '更新電影':
+      retMsg = getYahooMovie();
+      break;
+      
     case '本周新片':
       retMsg = initMessageKW_newWeekMovie();
       break;       
@@ -25,6 +29,10 @@ function initReplyMessageKW(msgText, retMsg) {
     case '即將上映':
       retMsg = initMessageKW_cominSoonMovie();
       break;
+
+//    case '功能表':
+//      retMsg = text();
+//      break;
       
     default:
         retMsg = [{
