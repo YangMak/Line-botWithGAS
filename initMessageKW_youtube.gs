@@ -6,28 +6,78 @@ function initMessageKW_youtube(msgText) {
   var results = YouTube.Search.list('id,snippet', {q: search, maxResults: 10, type: 'video'});
   var resultList = results.items
   
+  /*
+  title -> maxTitleLength(item.snippet.title)
+  img -> item.snippet.thumbnails.high.url
+  text -> item.snippet.channelTitle
+  url -> "https://youtu.be/" + item.id.videoId
+  */
+  
   for(var i in resultList) {
     var item = resultList[i];
     videoList[i] = {
-      //thumbnailImageUrl: 'https://i.ytimg.com/vi/'+ item.id.videoId +'/default.jpg',
-      thumbnailImageUrl: item.snippet.thumbnails.high.url,
-      imageBackgroundColor: '#000000',
-      title: maxTitleLength(item.snippet.title),
-      text : item.snippet.channelTitle,
-      actions: [{
-        type: 'uri',
-        label: '前往Youtube觀看',
-        uri: 'https://youtu.be/' + item.id.videoId
-      }]
+      type: 'bubble',
+      styles: {
+        hero: {
+          backgroundColor: "#000000"
+        }
+      },     
+      hero: {
+        type: "image",
+        url: item.snippet.thumbnails.high.url,
+        size: "full",
+        margin: "none",
+        backgroundColor: "#000000"
+      },         
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        contents: [          
+          {
+            type: "text",
+            weight: "bold",
+            color: "#000000",  
+            text: item.snippet.title
+          },
+          {
+            type: "text",
+            size: "xs",
+            color: "#636363",              
+            text: item.snippet.channelTitle
+          },
+          {
+            type: "separator"
+          }              
+        ]
+      },       
+      footer: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        contents: [              
+          {
+            type: "button",
+            height: "sm",                
+            style: "primary",
+            color: "#0062cc",
+            action: {
+              type: "uri",
+              label: "前往Youtube觀看",
+              uri: "https://youtu.be/" + item.id.videoId
+            }
+          }
+        ]
+      } 
     }
   };
  
   var retMsg = [{
-    type: 'template',
+    type: 'flex',
     altText: 'Youtube search List',
-    template: {
-      type: 'carousel',
-      columns: videoList
+    contents: {
+      type: "carousel",
+      contents: videoList
     }
   }]  
 

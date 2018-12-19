@@ -22,6 +22,10 @@ function initReplyMessageKW(msgText, retMsg) {
       retMsg = getYahooMovie();
       break;
       
+    case '排行榜':
+      retMsg = initMessageKW_chartTaipei();
+      break;
+      
     case '本周新片':
       retMsg = initMessageKW_newWeekMovie();
       break;       
