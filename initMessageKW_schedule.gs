@@ -14,7 +14,7 @@ function initMessageKW_schedule(msgText) {
             'actions': [{
               'type': 'datetimepicker',
               'label': '選個良辰吉時吧',
-              'data': note,
+              'data': '[提醒]' + note,
               'mode': 'datetime'
             }]
         }

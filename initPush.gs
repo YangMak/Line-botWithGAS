@@ -1,12 +1,7 @@
 function initPush(postMsg) {
     //console.log('initPush');
-    //console.log(postMsg);
+    //console.log(e);
     var push_url = 'https://api.line.me/v2/bot/message/push';
-
-    var message = [{
-        type: 'text',
-        text: postMsg
-    }]
 
     var header = {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -15,7 +10,7 @@ function initPush(postMsg) {
 
     var payload = {
         'to': USER_ID,
-        'messages': message
+        'messages': postMsg
     }
 
     var options = {
