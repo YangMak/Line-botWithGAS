@@ -39,19 +39,7 @@ function initReplyMessage(token, e) {
             break;
 
         case 'location':
-            retMsg = [{
-                    'type': 'text',
-                    'text': '位置 + 經緯度'
-                },
-                {
-                    'type': 'text',
-                    'text': msg.address
-                },
-                {
-                    'type': 'text',
-                    'text': msg.latitude + ' | ' + msg.longitude
-                }
-            ];
+            retMsg = initWeatherLocation(msg.address, msg.latitude, msg.longitude, token);
             break;
 
         default:

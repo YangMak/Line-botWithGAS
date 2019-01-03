@@ -9,7 +9,7 @@ function initGoogleCalendarPush(item, datatime) {
     date,           // 結束時間
     {
       description: 'Create from [IronCat]'  // 備註
-    }).addEmailReminder(0).setColor(6);     // email 提醒 (分鐘) 
+    }).addEmailReminder(0).setColor(6);     // email 提醒 (分鐘)
   
   var postMsg = [{
     type: 'text',

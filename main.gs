@@ -5,18 +5,16 @@ function doGet(e) {
 
 // 處理Line server傳進來訊息，再送出訊息到用戶端
 function doPost(e) {
-    //var json = e.postData.getDataAsString();
-    //console.log(json);
+    var msg = JSON.parse(e.postData.contents);
+    console.log(msg);
     var param = e.parameter;
     // e => reply Event  
     if (JSON.stringify(param) == '{}') {
         initReply(e);
-        //console.log('pre - initReply');
     } else {
         // e => push Event
         var postMsg = param.msg;
-        initPush(postMsg);
-        //console.log('pre - initPush');      
+        initPush(postMsg, e);      
     }
     return ContentService.createTextOutput(JSON.stringify({ 'content': 'post ok' })).setMimeType(ContentService.MimeType.JSON);
 }

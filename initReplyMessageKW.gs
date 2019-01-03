@@ -7,7 +7,7 @@ function initReplyMessageKW(msgText, retMsg) {
   
   switch(kw) {
     case '提醒':
-      retMsg = initMessageKW_schedule(msgText);
+      retMsg = initMessageKW_schedule(msgText, kw);
       break;
 
     case '翻譯':

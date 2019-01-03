@@ -34,6 +34,7 @@ function initMessageKW_chartTaipei() {
         contents: [
           {
             type: "text",
+            weight: "bold",
             text: item[0]
           },
           {
@@ -45,7 +46,12 @@ function initMessageKW_chartTaipei() {
         type: "image",
         url: item[2],
         size: "5xl",
-        backgroundColor: "#000000"
+        backgroundColor: "#000000",
+        action: {
+          type: "uri",
+          label: item[0],
+          uri: item[2]
+        }         
       },         
       body: {
         type: "box",
@@ -126,7 +132,7 @@ function initMessageKW_chartTaipei() {
       contents: movieList
     }
   }]  
- Logger.log(retMsg);
+
   return retMsg;
 }
 

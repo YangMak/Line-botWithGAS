@@ -12,9 +12,16 @@ function initReplyPostback(token, e) {
     
     var item = data.replace(kwReg, '');
     var kw = data.match(kwReg)[0].replace('[', '').replace(']', '');
-    var kwList = ['提醒'];
+    var kwList = ['文字', '提醒'];
   
     switch(kw) {
+      case '文字':
+        postMsg = [{
+          type: 'text',
+          text: item
+        }];
+        break;        
+        
       case '提醒':
         postMsg = initGoogleCalendarPush(item, e.postback.params.datetime);
         break;
@@ -26,11 +33,6 @@ function initReplyPostback(token, e) {
         }];
         break;
     }   
-  
-//  var params = e.postback.params.datetime;
-//    var postMsg = '已記錄提醒事項:' + '\n時間: ' + params + '\n--------------------------\n' + data;
-//
-//    initPush(postMsg);
     
   initPush(postMsg);
   return;

@@ -20,30 +20,97 @@ function initMessageKW_newWeekMovie() {
   for(var i in arrangeObj) {
     var item = arrangeObj[i];
     movieList[i] = {
-      thumbnailImageUrl: item[2],
-      imageBackgroundColor: '#000000',
-      title: maxTitleLength(item[0]),
-      text : item[5] + '\n期待度 ： ' + item[4] + ' 網友想看',
-      actions: [{
-        type: 'uri',
-        label: '電影介紹',
-        uri: item[1]
-      },{
-        type: 'uri',
-        label: '預告片',
-        uri: item[3]
-      }]
+      type: 'bubble',
+      styles: {
+        hero: {
+          backgroundColor: "#000000"
+        }
+      },          
+      header: {
+        type: "box",
+        layout: "vertical",
+        contents: [
+          {
+            type: "text",
+            weight: "bold",
+            text: item[0]
+          },
+          {
+            type: "separator"
+          }              
+        ]
+      },         
+      hero: {
+        type: "image",
+        url: item[2],
+        size: "5xl",
+        backgroundColor: "#000000",
+        action: {
+          type: "uri",
+          label: item[0],
+          uri: item[2]
+        }        
+      },         
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        contents: [          
+          {
+            type: "text",
+            size: "xs",
+            color: "#636363",
+            text: item[5]
+          },
+          {
+            type: "text",
+            size: "xs",
+            color: "#636363",              
+            text: "期待度：" + item[4] + " 網友想看"
+          },
+          {
+            type: "separator"
+          }              
+        ]
+      },       
+      footer: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        contents: [
+          {
+            type: "button",
+            height: "sm",
+            style: "primary",
+            color: "#ff8400",
+            action: {
+              type: "uri",
+              label: "電影介紹",
+              uri: item[1]
+            }
+          },
+          {
+            type: "button",
+            height: "sm",                
+            style: "primary",
+            color: "#ff8400",
+            action: {
+              type: "uri",
+              label: "預告片",
+              uri: item[3]
+            }
+          },               
+        ]
+      } 
     }
   };  
-
+  
   var retMsg = [{
-    type: 'template',
-    altText: 'Yahoo movie List (Released this week)',
-    template: {
-      type: 'carousel',
-      columns: movieList,
-      imageAspectRatio: "square",
-      imageSize: "contain"      
+    type: 'flex',
+    altText: 'Yahoo movie List (Released This Week)',
+    contents: {
+      type: "carousel",
+      contents: movieList
     }
   }]  
 

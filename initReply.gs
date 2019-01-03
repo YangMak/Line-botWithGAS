@@ -1,6 +1,7 @@
 function initReply(e) {
-    console.log('initReply');
+    //console.log('initReply');
     var replyEvent = JSON.parse(e.postData.contents).events[0];
+    //console.log(replyEvent);
     var replyToken = replyEvent.replyToken;
     var replyType = replyEvent.type;
     var reply_url = 'https://api.line.me/v2/bot/message/reply';

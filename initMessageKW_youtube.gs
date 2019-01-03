@@ -26,7 +26,8 @@ function initMessageKW_youtube(msgText) {
         type: "image",
         url: item.snippet.thumbnails.high.url,
         size: "full",
-        margin: "none",
+        aspectMode: 'cover',        
+        aspectRatio: "1.91:1",
         backgroundColor: "#000000"
       },         
       body: {
@@ -60,7 +61,7 @@ function initMessageKW_youtube(msgText) {
             type: "button",
             height: "sm",                
             style: "primary",
-            color: "#0062cc",
+            color: "#ff0000",
             action: {
               type: "uri",
               label: "前往Youtube觀看",
