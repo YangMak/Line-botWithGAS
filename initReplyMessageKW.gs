@@ -1,11 +1,15 @@
-function initReplyMessageKW(msgText, retMsg) {
+function initReplyMessageKW(msgText, retMsg, userid, groupid) {
   var kw = msgText.split(' ')[0].replace(/[!！]/g, '').toLowerCase();
   
   //Logger.log(kw);
   
-  var kwList = ['提醒', '翻譯', 'yt', '更新電影', '本周新片', '即將上映', '功能表'];
+  var kwList = ['提醒', '翻譯', 'yt', '更新電影', '本周新片', '即將上映', '功能表', '先退下吧'];
   
   switch(kw) {
+    case '先退下吧':
+      retMsg = initLeaveGroup(groupid);
+      break;
+      
     case '提醒':
       retMsg = initMessageKW_schedule(msgText, kw);
       break;

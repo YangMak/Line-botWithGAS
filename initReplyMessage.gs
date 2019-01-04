@@ -1,5 +1,5 @@
 // var e = JSON.parse(e.postData.contents).events[0];
-function initReplyMessage(token, e) {
+function initReplyMessage(token, e, userid, groupid) {
     //console.log('initReplyMessage');
     var msg = e.message;
     var msgType = msg.type;
@@ -9,7 +9,7 @@ function initReplyMessage(token, e) {
     switch (msgType) {
         case 'text':
             if(msg.text.match(regE)){
-                retMsg = initReplyMessageKW(msg.text, retMsg);
+                retMsg = initReplyMessageKW(msg.text, retMsg, userid, groupid);
             } else {
                 retMsg = [{
                     'type': msgType,

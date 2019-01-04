@@ -1,9 +1,13 @@
 function initReply(e) {
-    //console.log('initReply');
     var replyEvent = JSON.parse(e.postData.contents).events[0];
     //console.log(replyEvent);
     var replyToken = replyEvent.replyToken;
     var replyType = replyEvent.type;
+  
+    /* --- check userid and groupid --- */
+    var userid = replyEvent.source.userId? replyEvent.source.userId : '';
+    var groupid = replyEvent.source.userId? replyEvent.source.groupId : '';
+    
     var reply_url = 'https://api.line.me/v2/bot/message/reply';
 
     // 沒有 replyToken 直接 return
@@ -14,7 +18,7 @@ function initReply(e) {
     switch (replyType) {
         case 'message':
             //console.log('pre - initReplyMessage');
-            var message = initReplyMessage(replyToken, replyEvent);
+            var message = initReplyMessage(replyToken, replyEvent, userid, groupid);
             //console.log(message);
 
             var header = {
