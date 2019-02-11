@@ -54,11 +54,9 @@ Movie List
 -----
 `Yahoo movie` + `Line Flex Message (Carousel)`
 
-<div style="display:flex;">
-    <img name="lS0GHkS" src="https://i.imgur.com/lS0GHkS.jpg" width="280"/>
-    <img name="LYnvSNj" src="https://i.imgur.com/LYnvSNj.jpg" width="280"/>
-    <img name="TbGvc0k" src="https://i.imgur.com/TbGvc0k.jpg" width="280"/>
-</div>
+| 排行榜 | 本週新片 | 即將上映 |
+| ------ | ------ | ------ |
+| <img name="lS0GHkS" src="https://i.imgur.com/lS0GHkS.jpg" width="280"/> | <img name="LYnvSNj" src="https://i.imgur.com/LYnvSNj.jpg" width="280"/> | <img name="TbGvc0k" src="https://i.imgur.com/TbGvc0k.jpg" width="280"/> |
 
 Auto Push Message
 -----
