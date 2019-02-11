@@ -23,9 +23,9 @@ Schedule
 `Google Calendar API`
 
 <div style="display:flex;">
-    <img name="uhhW8dq" src="https://i.imgur.com/uhhW8dq.jpg" width="300"/>
-    <img name="Z80mdOQ" src="https://i.imgur.com/Z80mdOQ.jpg" width="300"/>
-    <img name="Yw6MDN6" src="https://i.imgur.com/Yw6MDN6.jpg" width="300"/>
+    <img name="uhhW8dq" src="https://i.imgur.com/uhhW8dq.jpg" width="280"/>
+    <img name="Z80mdOQ" src="https://i.imgur.com/Z80mdOQ.jpg" width="280"/>
+    <img name="Yw6MDN6" src="https://i.imgur.com/Yw6MDN6.jpg" width="280"/>
 </div>
 
 Weather 
@@ -37,9 +37,9 @@ Weather
 - Latitude and longitude
 
 <div style="display:flex;">
-    <img name="iTnvs8b" src="https://i.imgur.com/iTnvs8b.jpg" width="300"/>
-    <img name="V7CKhwu" src="https://i.imgur.com/V7CKhwu.jpg" width="300"/>
-    <img name="jenQCVZ" src="https://i.imgur.com/jenQCVZ.jpg" width="300"/>
+    <img name="iTnvs8b" src="https://i.imgur.com/iTnvs8b.jpg" width="280"/>
+    <img name="V7CKhwu" src="https://i.imgur.com/V7CKhwu.jpg" width="280"/>
+    <img name="jenQCVZ" src="https://i.imgur.com/jenQCVZ.jpg" width="280"/>
 </div>
 
 Youtube
@@ -55,9 +55,9 @@ Movie List
 `Yahoo movie` + `Line Flex Message (Carousel)`
 
 <div style="display:flex;">
-    <img name="lS0GHkS" src="https://i.imgur.com/lS0GHkS.jpg" width="300"/>
-    <img name="LYnvSNj" src="https://i.imgur.com/LYnvSNj.jpg" width="300"/>
-    <img name="TbGvc0k" src="https://i.imgur.com/TbGvc0k.jpg" width="300"/>
+    <img name="lS0GHkS" src="https://i.imgur.com/lS0GHkS.jpg" width="280"/>
+    <img name="LYnvSNj" src="https://i.imgur.com/LYnvSNj.jpg" width="280"/>
+    <img name="TbGvc0k" src="https://i.imgur.com/TbGvc0k.jpg" width="280"/>
 </div>
 
 Auto Push Message
