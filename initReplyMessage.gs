@@ -4,18 +4,19 @@ function initReplyMessage(token, e, userid, groupid) {
     var msg = e.message;
     var msgType = msg.type;
     var retMsg;
-    var regE = new RegExp('^[!！]{1}[a-zA-Z0-9_\\u4e00-\\u9fa5]+\\s[a-zA-Z0-9_\\u4e00-\\u9fa5\\s]+','g');
+//    var regE = new RegExp('^[!！]{1}[a-zA-Z0-9_\\u4e00-\\u9fa5]+\\s[a-zA-Z0-9_\\u4e00-\\u9fa5\\s]+','g');
     
     switch (msgType) {
         case 'text':
-            if(msg.text.match(regE)){
+//            if(msg.text.match(regE)){
                 retMsg = initReplyMessageKW(msg.text, retMsg, userid, groupid);
-            } else {
-                retMsg = [{
-                    'type': msgType,
-                    'text': '你剛剛說的是: ' + msg.text
-                }];
-            }
+//            } 
+//            else {
+//                retMsg = [{
+//                    'type': msgType,
+//                    'text': '你剛剛說的是: ' + msg.text
+//                }];
+//            }
             break;
 
         case 'image':

@@ -105,6 +105,7 @@ function getChartList(SpreadSheet, arrangeObj, sheetRange, FetchUrl) {
   // --- url & title --- //
   var urlTitleExp = /<a href=\"([\s\S]*?)<\/a>/gi;  
   var urlTitle = result.match(urlTitleExp);
+    Logger.log(urlTitle);
 
   for(var i in urlTitle){
     arrangeObj[i] = [
@@ -112,9 +113,9 @@ function getChartList(SpreadSheet, arrangeObj, sheetRange, FetchUrl) {
       /*url : */urlTitle[i].replace(/<a href=\"/gi, '').replace(/\"([\s\S]*?)class=\"gabtn\"([\s\S]*?)<\/a>/gi, '')
     ]
   }
- 
+  
+  //Logger.log(arrangeObj);
   range.setValues(arrangeObj);
-  Logger.log('1');
 }
 
 
@@ -146,8 +147,11 @@ function pushChartMovieInfo(SpreadSheet, arrangeObj, chartListRange, chartTaipei
     // --- movieTime --- //
     var movieTimeExp = /\">預告片<\/a>([\s\S]*?)<a href="([\s\S]*?)class=\"btn_s_time\">時刻表<\/a>/gi;
     var ExpmovieTime = result[0].match(movieTimeExp);
-    var movieTime = ExpmovieTime[0].replace( /\">預告片<\/a>([\s\S]*?)<a href="/gi, '').replace(/\"([\s\S]*?)class=\"btn_s_time\">時刻表<\/a>/gi, '');
-    
+    if(ExpmovieTime){
+      var movieTime = ExpmovieTime[0].replace( /\">預告片<\/a>([\s\S]*?)<a href="/gi, '').replace(/\"([\s\S]*?)class=\"btn_s_time\">時刻表<\/a>/gi, '');
+    }else{
+      var movieTime = sheetObj[i][1];
+    }
     //--- Expectation --- //
     var expecExp = /<div class=\"circlenum\"([\s\S]*?)<div class=\"num\">([\s\S]*?)<\/span>/gi;
     var Expexpec = result[0].match(expecExp);

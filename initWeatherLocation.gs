@@ -109,6 +109,7 @@ function initWeatherLocation(address, lat, lon, token) {
     }]  
   
     if(status == 'PushMode') {
+      console.log(retMsg);
       initPush(retMsg);
     }else {
       return retMsg;
@@ -153,6 +154,10 @@ function weatherImageUrl(weather, iconId) {
       imgUrl = 'https://i.imgur.com/5o0J2yT.jpg';  //rain
       break;
       
+    case 'Mist':
+      imgUrl = 'https://i.imgur.com/DXhKAbx.jpg';  //rain
+      break;      
+      
     case 'Thunderstorm':
       imgUrl = 'https://i.imgur.com/4L7iE6K.jpg';  //thunderstorm
       break;
@@ -164,6 +169,10 @@ function weatherImageUrl(weather, iconId) {
     case 'Atmosphere':
       imgUrl = 'https://i.imgur.com/DXhKAbx.jpg';  //mist
       break;
+      
+    default:
+      imgUrl = 'https://i.imgur.com/2sMHm0x.jpg';  //errors
+      break;      
   }
   
 return imgUrl;  

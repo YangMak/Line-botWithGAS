@@ -1,12 +1,12 @@
 function initReplyMessageKW(msgText, retMsg, userid, groupid) {
-  var kw = msgText.split(' ')[0].replace(/[!！]/g, '').toLowerCase();
+    var kw = msgText.split(' ')[0].toLowerCase();//var kw = msgText.split(' ')[0].replace(/[!！]/g, '').toLowerCase();
   
   //Logger.log(kw);
   
-  var kwList = ['提醒', '翻譯', 'yt', '更新電影', '本周新片', '即將上映', '功能表', '先退下吧'];
+  var kwList = ['請自我介紹', '先退下吧88', '提醒', '翻譯', 'yt', '更新電影', '本周新片', '即將上映', '功能表'];
   
   switch(kw) {
-    case '先退下吧':
+    case '先退下吧88':
       retMsg = initLeaveGroup(groupid);
       break;
       
@@ -26,27 +26,31 @@ function initReplyMessageKW(msgText, retMsg, userid, groupid) {
       retMsg = getYahooMovie();
       break;
       
-    case '排行榜':
+    case '電影排行榜':
       retMsg = initMessageKW_chartTaipei();
       break;
       
-    case '本周新片':
+    case '電影本周新片':
       retMsg = initMessageKW_newWeekMovie();
       break;       
 
-    case '即將上映':
+    case '電影即將上映':
       retMsg = initMessageKW_cominSoonMovie();
       break;
 
-//    case '功能表':
-//      retMsg = text();
-//      break;
+    case '請自我介紹':
+      retMsg = [{
+        'type': 'text',
+        'text': '歐嗨喲~ 在下是 IronCat : )'
+      },{
+        'type': 'sticker',
+        'packageId': '11537',
+        'stickerId': '52002735'          
+      }];
+      break;
       
     default:
-        retMsg = [{
-            'type': 'text',
-            'text': kw + ' 不是關鍵字喔!'
-        }];
+        retMsg = 'NotReply';
         break;
   }
   

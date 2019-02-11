@@ -1,6 +1,5 @@
 function initMessageKW_schedule(msgText, kw) {
-    //console.log('initMessageKW_schedule');
-    var note = msgText.replace(/[!！]/g, '').replace(kw + ' ', '');
+        var note = msgText.replace(kw + ' ', '');//var note = msgText.replace(/[!！]/g, '').replace(kw + ' ', '');
     
     var retMsg = [{
       type: "flex",

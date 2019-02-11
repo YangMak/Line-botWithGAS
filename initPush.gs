@@ -1,6 +1,8 @@
 function initPush(postMsg) {
     //console.log('initPush');
     //console.log(e);
+    var postId = postMsg[0].postId? postMsg[0].postId : USER_ID;
+    
     var push_url = 'https://api.line.me/v2/bot/message/push';
 
     var header = {
@@ -9,7 +11,7 @@ function initPush(postMsg) {
     }
 
     var payload = {
-        'to': USER_ID,
+        'to': postId,
         'messages': postMsg
     }
 
