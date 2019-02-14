@@ -64,4 +64,4 @@ Auto Push Message
 
 | Weather | ImageMap |
 | ------ | ------ |
-| <img name="qHpTZbw" src="https://i.imgur.com/qHpTZbw.jpg" width="300"/> | <img name="mXSSbuN" src="https://i.imgur.com/mXSSbuN.jpg" width="300"/> |
+| <img name="xrqHySN" src="https://i.imgur.com/xrqHySN.jpg" width="300"/> | <img name="mXSSbuN" src="https://i.imgur.com/mXSSbuN.jpg" width="300"/> |
